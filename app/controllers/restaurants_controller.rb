@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  # before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @reviews = @restaurant.reviews
   end
 
   # GET /restaurants/new
@@ -25,16 +26,11 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
-    respond_to do |format|
-      if @restaurant.save
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
-        format.json { render :show, status: :created, location: @restaurant }
-      else
-        format.html { render :new }
-        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
-      end
-    end
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant), notice: 'Restaurant was successfully created.'
+          else
+            render :new
+          end
   end
 
   # PATCH/PUT /restaurants/1
