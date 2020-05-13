@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_103051) do
     t.string "name"
     t.string "address"
     t.string "category"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.integer "reviews"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_103051) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
+    t.string "restaurant"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

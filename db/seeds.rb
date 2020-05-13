@@ -9,12 +9,13 @@ puts "Cleaning database..."
 Restaurant.destroy_all
 
 puts "Creating restaurants..."
-lsdlp = { name: "La Strada de la Pizza", address: "10 Pizza St, Some Greek City A6 42N", category: "Pizzeria", phone_number: 3333555555, reviews: 3 }
-pizza_fun = { name: "Pizza FAN", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: 4444666666, reviews: 4 }
-test1 = { name: "Pdsza FAN", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: 4444666666, reviews: 4 }
-test2 = { name: "Pizza FuN", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: 4444666666, reviews: 4 }
-test3 = { name: "Pizza F4N", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: 4444666666, reviews: 4 }
-[lsdlp, pizza_fun, test1, test2, test3].each do |attributes|
+lsdlp = { name: "La Strada de la Pizza", address: "10 Pizza St, Some Greek City A6 42N", category: "Pizzeria", phone_number: "33 33 55 55 55", reviews: 3 }
+pizza_fun = { name: "Pizza FAN", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: "44 44 66 66 66", reviews: 4 }
+resone = { name: "Pdsza FAN", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: "44 44 66 66 66", reviews: 4 }
+restwo = { name: "Pizza FuN", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: "44 44 66 66 66", reviews: 4 }
+resthree = { name: "Pizza F4N", address: "42S Pizzastreet High St, Some Greek City JK9 Q42", category: "Pizzeria", phone_number: "44 44 66 66 66", reviews: 4 }
+restaurants_test = [lsdlp, pizza_fun, resone, restwo, resthree]
+restaurants_test.each do |attributes|
   restaurant = Restaurant.create!(attributes)
   puts "Created #{restaurant.name}"
 end
