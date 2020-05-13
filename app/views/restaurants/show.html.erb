@@ -17,7 +17,7 @@
 
 <p>
   <strong>Phone:</strong>
-  <%= @restaurant.phone %>
+  <%= @restaurant.phone_number %>
 </p>
 
 <p>
@@ -25,6 +25,5 @@
   <%= @restaurant.reviews %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-dark" %> |
 <%= link_to 'Back', restaurants_path, class: "btn btn-warning" %>
-<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: "btn btn-dark" %>
